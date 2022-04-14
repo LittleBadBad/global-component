@@ -1,6 +1,6 @@
 {
   "name": "global-component",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "support some common global component api use react and mui5",
 
   "main": "build/index.cjs.js",
