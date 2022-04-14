@@ -1,0 +1,77 @@
+{
+  "name": "global-component",
+  "version": "0.0.7",
+  "description": "support some common global component api use react and mui5",
+
+  "main": "build/index.cjs.js",
+  "module": "build/index.esm.js",
+  "browser": "build/index.js",
+  "style": "build/index.css",
+  "typings": "build/types/index.d.ts",
+
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "npx rollup -c",
+    "codecov": "npx codecov",
+    "commitmsg": "npx commitlint -e $GIT_PARAMS",
+    "deploy-storybook-ci": "npx storybook-to-ghpages --ci",
+    "gc": "commit",
+    "lint": "npx eslint --ext .js,.jsx .",
+    "semantic-release": "npx semantic-release",
+    "start": "npm run build -- -w",
+    "storybook": "npx start-storybook -p 6006",
+    "test": "npx jest --coverage",
+    "travis-deploy-once": "npx travis-deploy-once",
+    "is-build-es5": "npx es-check es5 './build/**/*.!(esm).js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaebradley/example-rollup-react-component-npm-package.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "rollup",
+    "react",
+    "react component",
+    "rollup react",
+    "component",
+    "example react component",
+    "example rollup react component"
+  ],
+  "author": "jae.b.bradley@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaebradley/example-rollup-react-component-npm-package/issues"
+  },
+  "homepage": "https://github.com/jaebradley/example-rollup-react-component-npm-package#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.2.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
+    "rollup": "^2.70.1",
+    "rollup-plugin-filesize": "^9.1.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^4.1.2",
+    "tslib": "^2.3.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.6.1"
+  }
+}
