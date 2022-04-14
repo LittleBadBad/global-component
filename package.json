@@ -1,6 +1,6 @@
 {
   "name": "global-component",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "support some common global component api use react and mui5",
 
   "main": "build/index.cjs.js",
@@ -13,22 +13,11 @@
     "build"
   ],
   "scripts": {
-    "build": "npx rollup -c",
-    "codecov": "npx codecov",
-    "commitmsg": "npx commitlint -e $GIT_PARAMS",
-    "deploy-storybook-ci": "npx storybook-to-ghpages --ci",
-    "gc": "commit",
-    "lint": "npx eslint --ext .js,.jsx .",
-    "semantic-release": "npx semantic-release",
-    "start": "npm run build -- -w",
-    "storybook": "npx start-storybook -p 6006",
-    "test": "npx jest --coverage",
-    "travis-deploy-once": "npx travis-deploy-once",
-    "is-build-es5": "npx es-check es5 './build/**/*.!(esm).js'"
+    "build": "npx rollup -c"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaebradley/example-rollup-react-component-npm-package.git"
+    "url": "https://github.com/LittleBadBad/global-component.git"
   },
   "publishConfig": {
     "access": "public",
@@ -37,18 +26,14 @@
   "keywords": [
     "rollup",
     "react",
-    "react component",
-    "rollup react",
-    "component",
-    "example react component",
-    "example rollup react component"
+    "react component"
   ],
-  "author": "jae.b.bradley@gmail.com",
+  "author": "littlebadbad@qq.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jaebradley/example-rollup-react-component-npm-package/issues"
+    "url": "https://github.com/LittleBadBad/global-component/issues"
   },
-  "homepage": "https://github.com/jaebradley/example-rollup-react-component-npm-package#readme",
+  "homepage": "https://github.com/LittleBadBad/global-component#readme",
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@rollup/plugin-babel": "^5.3.1",
