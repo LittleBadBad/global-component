@@ -66,7 +66,7 @@ export interface GlobalTip {
     onClose?(): void
 }
 
-export interface DefaultProps {
+export interface DefaultProps extends Record<string, any>{
     Alert?: ElementType<GlobalAlert>
     Loading?: ElementType<GlobalLoading>
     Tip?: ElementType<GlobalTip>
