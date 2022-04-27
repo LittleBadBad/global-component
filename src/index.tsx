@@ -12,6 +12,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Snackbar from "@mui/material/Snackbar";
 import {ButtonProps} from "@mui/material/Button/Button";
 
+
 export interface MasterFunc {
     openTip(info: string, type?: "error" | "info" | "success" | "warning",
             autoHideDuration?: number): void,
@@ -121,7 +122,7 @@ function DefaultTip(props: GlobalTip) {
 }
 
 export default function Master(props: DefaultProps) {
-    const {children, Alert, Loading, Tip} = props
+    const {children, Alert, Loading, Tip, ...others} = props
     const [loadingOpen, setLoadingOpen] = useState<boolean>(false)
     const [tip, setTip] = useState<GlobalTip>({autoHideDuration: 3000, info: "", open: false, type: undefined})
     const [alertModal, setAlert] = useState<GlobalAlert>({
@@ -176,8 +177,7 @@ export default function Master(props: DefaultProps) {
         })
     }
 
-
-    const masterFunc: MasterFunc = {openTip, setLoadingOpen, openAlert}
+    const masterFunc: MasterFunc = {openTip, setLoadingOpen, openAlert, ...others}
 
     try {
         masterFunc.navigate = useNavigate()
