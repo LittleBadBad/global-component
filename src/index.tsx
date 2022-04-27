@@ -66,7 +66,7 @@ export interface GlobalTip {
     onClose?(): void
 }
 
-export interface DefaultProps extends Record<string, any>{
+export interface DefaultProps {
     Alert?: ElementType<GlobalAlert>
     Loading?: ElementType<GlobalLoading>
     Tip?: ElementType<GlobalTip>
@@ -121,7 +121,7 @@ function DefaultTip(props: GlobalTip) {
     </Snackbar>
 }
 
-export default function Master(props: DefaultProps) {
+export default function Master(props: DefaultProps & any) {
     const {children, Alert, Loading, Tip, ...others} = props
     const [loadingOpen, setLoadingOpen] = useState<boolean>(false)
     const [tip, setTip] = useState<GlobalTip>({autoHideDuration: 3000, info: "", open: false, type: undefined})
