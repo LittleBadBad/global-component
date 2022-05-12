@@ -63,7 +63,7 @@ ReactDOM.render(
 
 ![img.png](img/img.png)
 
-默认使用 [mui5](https://github.com/mui/material-ui) 的相关组件，可继承自定义的mui theme，可自定义
+默认使用 [mui5](https://github.com/mui/material-ui) 的相关组件，不继承自定义的mui theme，可自定义
 
 ```javascript
 import Master, {GlobalTip} from "global-component";
