@@ -25,6 +25,10 @@ export interface MasterFunc {
               onClose?: () => void): void
 
     navigate?: NavigateFunction
+
+    extend?: any
+
+    setExtend?(others: any): any
 }
 
 export interface DiaAction {
@@ -103,7 +107,7 @@ function DefaultLoading(props: GlobalLoading) {
             zIndex: theme.zIndex.drawer + 1
         })
     }
-    return <Backdrop sx={{backdrop: sxs.backdrop}} open={props.loadingOpen}>
+    return <Backdrop sx={sxs.backdrop} open={props.loadingOpen}>
         <CircularProgress sx={{color: '#fff'}}/>
     </Backdrop>
 }
@@ -123,6 +127,7 @@ function DefaultTip(props: GlobalTip) {
 
 export default function Master(props: DefaultProps & any) {
     const {children, Alert, Loading, Tip, ...others} = props
+    const [extend, setExtend] = useState({})
     const [loadingOpen, setLoadingOpen] = useState<boolean>(false)
     const [tip, setTip] = useState<GlobalTip>({autoHideDuration: 3000, info: "", open: false, type: undefined})
     const [alertModal, setAlert] = useState<GlobalAlert>({
@@ -177,7 +182,7 @@ export default function Master(props: DefaultProps & any) {
         })
     }
 
-    const masterFunc: MasterFunc = {openTip, setLoadingOpen, openAlert, ...others}
+    const masterFunc: MasterFunc = {openTip, setLoadingOpen, openAlert, extend, setExtend, ...others}
 
     try {
         masterFunc.navigate = useNavigate()
