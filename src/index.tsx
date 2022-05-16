@@ -79,10 +79,10 @@ export interface DefaultProps {
 
 function DefaultAlert(props: GlobalAlert) {
     const {onClose} = props
-    return <Dialog open={props.open} onClose={onClose}>
+    return <Dialog open={props.open} onClose={onClose} maxWidth={"md"} fullWidth>
         <DialogTitle>{props.title}</DialogTitle>
         <DialogContent>
-            <DialogContentText maxWidth={700} minWidth={200}>
+            <DialogContentText>
                 {props.content}
             </DialogContentText>
         </DialogContent>
