@@ -13,22 +13,18 @@ import Snackbar from "@mui/material/Snackbar";
 import {ButtonProps} from "@mui/material/Button/Button";
 
 
-export interface MasterFunc {
-    openTip(info: string, type?: "error" | "info" | "success" | "warning",
-            autoHideDuration?: number): void,
+export interface MasterFunc<T = any> {
+    openTip(info: string, type?: "error" | "info" | "success" | "warning", autoHideDuration?: number): void;
 
-    setLoadingOpen(open: boolean): void
+    setLoadingOpen(open: boolean): void;
 
-    openAlert(title: string,
-              content: string,
-              actions: DiaAction[],
-              onClose?: () => void): void
+    openAlert(title: string, content: string, actions: DiaAction[], onClose?: () => void): void;
 
-    navigate?: NavigateFunction
+    navigate?: NavigateFunction;
 
-    extend?: any
+    extend?: T;
 
-    setExtend?(others: any): any
+    setExtend?(others: T): any;
 }
 
 export interface DiaAction {
@@ -79,7 +75,7 @@ export interface DefaultProps {
 
 function DefaultAlert(props: GlobalAlert) {
     const {onClose} = props
-    return <Dialog open={props.open} onClose={onClose} maxWidth={"md"} fullWidth>
+    return <Dialog open={props.open} onClose={onClose} maxWidth={"sm"} fullWidth>
         <DialogTitle>{props.title}</DialogTitle>
         <DialogContent>
             <DialogContentText>
