@@ -1,5 +1,6 @@
 import {NavigateFunction, useNavigate} from "react-router";
 import {createContext, ElementType, ReactNode, useState} from "react";
+import {ButtonProps} from "@mui/material/Button/Button";
 import Alert from "@mui/material/Alert";
 import Backdrop from "@mui/material/Backdrop";
 import Button from "@mui/material/Button";
@@ -10,8 +11,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Snackbar from "@mui/material/Snackbar";
-import {ButtonProps} from "@mui/material/Button/Button";
-
 
 export interface MasterFunc<T = any> {
     openTip(info: string, type?: "error" | "info" | "success" | "warning", autoHideDuration?: number): void;
@@ -121,7 +120,7 @@ function DefaultTip(props: GlobalTip) {
     </Snackbar>
 }
 
-export default function Master(props: DefaultProps & any) {
+export default function Master<T = {}>(props: DefaultProps & T) {
     const {children, Alert, Loading, Tip, ...others} = props
     const [extend, setExtend] = useState({})
     const [loadingOpen, setLoadingOpen] = useState<boolean>(false)

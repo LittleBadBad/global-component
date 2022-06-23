@@ -1,17 +1,17 @@
 {
-  "name": "global-component",
-  "version": "0.1.4",
+  "name": "@littlebadbad/global-component",
+  "version": "0.1.7",
   "description": "support some common global component api use react and mui5",
-  "main": "build/index.cjs.js",
-  "module": "build/index.esm.js",
-  "browser": "build/index.js",
-  "style": "build/index.css",
-  "typings": "build/types/index.d.ts",
   "files": [
-    "build"
+    "build/*",
+    "types/*"
   ],
+  "module": "build/index.js",
+  "main": "build/index.js",
+  "typings": "type/index.d.ts",
   "scripts": {
-    "build": "npx rollup -c"
+    "build": "tsc",
+    "publish-npm": "npm publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "rollup",
@@ -49,6 +49,7 @@
   "peerDependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.6.1",
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
